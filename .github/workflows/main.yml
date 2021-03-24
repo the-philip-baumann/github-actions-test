@@ -1,5 +1,5 @@
 name: remote ssh command
-on: [push]
+on: push
 jobs:
 
   build:
@@ -11,6 +11,5 @@ jobs:
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
-        port: ${{ secrets.PORT }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: whoami
